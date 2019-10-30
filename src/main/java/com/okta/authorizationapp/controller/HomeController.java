@@ -15,18 +15,18 @@ public class HomeController {
 
     private Map<String, LocalDateTime> usersLastAccess = new HashMap<>();
 
-        @GetMapping("/")
-        public String getCurrentUser(@AuthenticationPrincipal OidcUser user, Model model) {
-            String email = user.getEmail();
+    @GetMapping("/")
+    public String getCurrentUser(@AuthenticationPrincipal OidcUser user, Model model) {
+        String email = user.getEmail();
 
-            model.addAttribute("email", email);
-            model.addAttribute("lastAccess", usersLastAccess.get(email));
-            model.addAttribute("firstName", user.getGivenName());
-            model.addAttribute("lastName", user.getFamilyName());
+        model.addAttribute("email", email);
+        model.addAttribute("lastAccess", usersLastAccess.get(email));
+        model.addAttribute("firstName", user.getGivenName());
+        model.addAttribute("lastName", user.getFamilyName());
 
-            usersLastAccess.put(email, LocalDateTime.now());
+        usersLastAccess.put(email, LocalDateTime.now());
 
-            return "home";
-        }
+        return "home";
+    }
 
 }
