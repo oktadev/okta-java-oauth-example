@@ -1,21 +1,31 @@
-##########################
-## IntelliJ
-##########################
-*.iml
-.idea/
-*.ipr
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
 *.iws
-out/
-.idea_modules/
+*.iml
+*.ipr
 
-##########################
-## Java
-##########################
-*.class
-.mtj.tmp/
-*.jar
-*.war
-*.ear
-hs_err_pid*
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
 
-/target
+### VS Code ###
+.vscode/
